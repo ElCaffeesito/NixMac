@@ -51,6 +51,7 @@
 	    "firefox"
 	    "the-unarchiver"
 	    "microsoft-teams"
+	    "whisky"
 	  ];
 	  masApps = {
 	    "Word" = 462054704;
@@ -58,6 +59,8 @@
 	    "Whatsapp" = 310633997;
 	  };
 	  onActivation.cleanup = "zap";
+	  onActivation.autoUpdate = true;
+	  onActivation.upgrade = true;
 	};
 
         nix.settings.experimental-features = "nix-command flakes";
@@ -86,6 +89,28 @@
               ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
             done
           '';
+
+	system.defaults = {
+	  dock.enable = true;
+	  dock.persistent-apps = [
+	    "/Applications/Safari.app"
+	    "/System/Applications/Notes.app"
+	    "/System/Applications/App Store.app"
+	    "/System/Applications/System Settings.app" 
+	    "${pkgs.obsidian}/Applications/Obsidian.app"
+	    "${pkgs.spotify}/Applications/Spotify.app"
+	    "/Applications/Whatsapp.app"
+            "${pkgs.discord}/Applications/Discord.app"
+            "${pkgs.warp-terminal}/Applications/Warp.app"
+            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            "/Applications/Whisky.app"
+	  ];
+	  finder.FXPreferredViewStyle = "clmv";
+	  loginwindow.GuestEnabled = false;
+	  NSGlobalDomain.AppleICUForce24HourTime = true;
+	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
+	};
+
       };
     in
     {

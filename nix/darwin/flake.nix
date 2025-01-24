@@ -91,7 +91,6 @@
           '';
 
 	system.defaults = {
-	  dock.enable = true;
 	  dock.persistent-apps = [
 	    "/Applications/Safari.app"
 	    "/System/Applications/Notes.app"
@@ -105,7 +104,6 @@
             "${pkgs.vscode}/Applications/Visual Studio Code.app"
             "/Applications/Whisky.app"
 	  ];
-	  finder.FXPreferredViewStyle = "clmv";
 	  loginwindow.GuestEnabled = false;
 	  NSGlobalDomain.AppleICUForce24HourTime = true;
 	  NSGlobalDomain.AppleInterfaceStyle = "Dark";

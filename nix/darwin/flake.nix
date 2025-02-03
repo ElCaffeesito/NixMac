@@ -40,6 +40,7 @@
 	  pkgs.appcleaner
 	  pkgs.vscode
 	  pkgs.git
+	  pkgs.docker
         ];
 
 	homebrew = {
@@ -52,6 +53,7 @@
 	    "the-unarchiver"
 	    "microsoft-teams"
 	    "whisky"
+	    "docker"
 	  ];
 	  masApps = {
 	    "Word" = 462054704;
